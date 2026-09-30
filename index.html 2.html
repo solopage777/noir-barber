@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOIR — Premium Barber Wrocław</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #0b0b0b;
+            color: #f5f1e8;
+        }
+
+        /* MENU */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 26px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #c9a96e;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 7%;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.35)),
+                url("https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=2000&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .small-title {
+            color: #c9a96e;
+            letter-spacing: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(55px, 9vw, 110px);
+            line-height: .95;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            font-family: Arial, sans-serif;
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 17px 35px;
+            border: 1px solid #c9a96e;
+            color: #c9a96e;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            letter-spacing: 2px;
+            transition: .3s;
+        }
+
+        .button:hover {
+            background: #c9a96e;
+            color: #111;
+        }
+
+        /* SEKCJE */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-label {
+            color: #c9a96e;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 55px;
+            margin-bottom: 60px;
+        }
+
+        /* O NAS */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            min-height: 550px;
+            background:
+                url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80")
+                center/cover;
+        }
+
+        .about-text p {
+            font-family: Arial, sans-serif;
+            color: #aaa;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        /* USŁUGI */
+
+        .services {
+            background: #101010;
+        }
+
+        .service-list {
+            max-width: 900px;
+        }
+
+        .service {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #292929;
+        }
+
+        .service h3 {
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .service p {
+            font-family: Arial, sans-serif;
+            color: #777;
+            margin-top: 8px;
+        }
+
+        .price {
+            color: #c9a96e;
+            font-size: 24px;
+        }
+
+        /* OPINIE */
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .review {
+            background: #141414;
+            padding: 35px;
+        }
+
+        .stars {
+            color: #c9a96e;
+            margin-bottom: 20px;
+        }
+
+        .review p {
+            font-family: Arial, sans-serif;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .review strong {
+            display: block;
+            margin-top: 25px;
+        }
+
+        /* KONTAKT */
+
+        .contact {
+            text-align: center;
+            background:
+                linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.85)),
+                url("https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=2000&q=80")
+                center/cover;
+        }
+
+        .contact h2 {
+            font-size: 65px;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            font-family: Arial, sans-serif;
+            color: #bbb;
+            margin-bottom: 35px;
+        }
+
+        /* STOPKA */
+
+        footer {
+            padding: 30px 7%;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        /* TELEFON */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            nav div:last-child {
+                display: none;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                min-height: 400px;
+            }
+
+            .reviews {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .contact h2 {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">NOIR</div>
+
+    <div>
+        <a href="#o-nas">O NAS</a>
+        <a href="#uslugi">USŁUGI</a>
+        <a href="#opinie">OPINIE</a>
+        <a href="#kontakt">KONTAKT</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            PREMIUM BARBER SHOP · WROCŁAW
+        </div>
+
+        <h1>
+            TWÓJ STYL.<br>
+            NASZE RZEMIOSŁO.
+        </h1>
+
+        <p>
+            Miejsce stworzone dla mężczyzn, którzy cenią
+            perfekcyjne cięcie, detale i ponadczasowy styl.
+        </p>
+
+        <a class="button" href="#kontakt">
+            UMÓW WIZYTĘ
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- O NAS -->
+
+<section id="o-nas">
+
+    <div class="about">
+
+        <div class="about-image"></div>
+
+        <div class="about-text">
+
+            <div class="section-label">
+                POZNAJ NAS
+            </div>
+
+            <h2 class="section-title">
+                Więcej niż<br>barber shop.
+            </h2>
+
+            <p>
+                NOIR to połączenie klasycznego barberingu
+                z nowoczesnym podejściem do męskiego stylu.
+            </p>
+
+            <p>
+                Dbamy o każdy szczegół — od pierwszego kontaktu
+                po finalne poprawki fryzury i brody.
+            </p>
+
+            <p>
+                Wierzymy, że dobra fryzura to nie tylko wygląd.
+                To pewność siebie.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- USŁUGI -->
+
+<section id="uslugi" class="services">
+
+    <div class="section-label">
+        NASZA OFERTA
+    </div>
+
+    <h2 class="section-title">
+        Usługi
+    </h2>
+
+    <div class="service-list">
+
+        <div class="service">
+            <div>
+                <h3>Classic Cut</h3>
+                <p>Klasyczne strzyżenie męskie</p>
+            </div>
+            <div class="price">70 zł</div>
+        </div>
+
+        <div class="service">
+            <div>
+                <h3>Beard</h3>
+                <p>Modelowanie i pielęgnacja brody</p>
+            </div>
+            <div class="price">60 zł</div>
+        </div>
+
+        <div class="service">
+            <div>
+                <h3>Full Service</h3>
+                <p>Strzyżenie + broda + pielęgnacja</p>
+            </div>
+            <div class="price">120 zł</div>
+        </div>
+
+        <div class="service">
+            <div>
+                <h3>Kids Cut</h3>
+                <p>Strzyżenie dla najmłodszych</p>
+            </div>
+            <div class="price">50 zł</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OPINIE -->
+
+<section id="opinie">
+
+    <div class="section-label">
+        KLIENCI O NAS
+    </div>
+
+    <h2 class="section-title">
+        Opinie
+    </h2>
+
+    <div class="reviews">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+                „Świetny klimat i naprawdę dobre cięcie.
+                W końcu znalazłem barbera, do którego będę wracał.”
+            </p>
+
+            <strong>— Michał</strong>
+        </div>
+
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+                „Mega profesjonalne podejście.
+                Wszystko dokładnie tak, jak chciałem.”
+            </p>
+
+            <strong>— Kamil</strong>
+        </div>
+
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+
+            <p>
+                „Bardzo dobry barber i świetna atmosfera.
+                Polecam każdemu.”
+            </p>
+
+            <strong>— Mateusz</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- KONTAKT -->
+
+<section id="kontakt" class="contact">
+
+    <div class="section-label">
+        ZAREZERWUJ TERMIN
+    </div>
+
+    <h2>
+        Gotowy na zmianę?
+    </h2>
+
+    <p>
+        Wrocław · Pon–Sob · 9:00–20:00
+    </p>
+
+    <a class="button" href="tel:123456789">
+        ZADZWOŃ · 123 456 789
+    </a>
+
+</section>
+
+
+<footer>
+
+    <div>© 2026 NOIR Barber Wrocław</div>
+
+    <div>Instagram · Facebook</div>
+
+</footer>
+
+</body>
+</html>
